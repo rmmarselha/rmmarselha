@@ -16,7 +16,7 @@
 [![Reinor Marselha's GitHub stats-Dark](https://github-readme-stats.vercel.app/api?username=rmmarselha&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/rmmarselha/github-readme-stats#gh-dark-mode-only)
 
 ### 🔗 Conecte-se comigo
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor)](www.linkedin.com/in/rmmarselha)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor)](https://www.linkedin.com/in/rmmarselha/)
 [![Github](https://img.shields.io/badge/Github-FFF?style=for-the-badge&logo=github&logoColor=0E76A8)](https://github.com/rmmarselha/) <a href =  "mailto:reinormauricio.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"> </a><a href="https://wa.me/5531985200722" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 <a href="https://t.me/rmmarselha" target="_blank"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"></a>
 
