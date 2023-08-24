@@ -8,9 +8,9 @@
 
           Pai de 2 perfeições , Arthur e Antonio, sou natural da cidade de Conselheiro Lafaieite /MG.
 
-    Profissional certificado em ITIL® 4 Foundation, com experiência de 9 anos na área de Telecomunicações , formado em Gestão de Tecnologia da Informação.  E no último ano, atuando como Analista de Sistemas.  
-
-    Estudando para se torna um desenvolvedor no futuro.
+    Profissional certificado em ITIL® 4 Foundation, com experiência de 9 anos na área de Telecomunicações , 
+    formado em Gestão de Tecnologia da Informação.  E no último ano, atuando como Analista de Sistemas.  
+          Estudando para se torna um desenvolvedor no futuro.
 
 
 [![Reinor Marselha's GitHub stats-Dark](https://github-readme-stats.vercel.app/api?username=rmmarselha&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/rmmarselha/github-readme-stats#gh-dark-mode-only)
