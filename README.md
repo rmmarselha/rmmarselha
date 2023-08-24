@@ -6,7 +6,7 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MAURICIO+DE+MARSELHA;TENHO+29+ANOS!;+BEM-VINDO!+:%29)](https://git.io/typing-svg)
 
-       Sou pai de 2 perfeições , Arthur e Antonio, sou natural da cidade de Conselheiro Lafaieite /MG.
+          Pai de 2 perfeições , Arthur e Antonio, sou natural da cidade de Conselheiro Lafaieite /MG.
 
     Profissional certificado em ITIL® 4 Foundation, com experiência de 9 anos na área de Telecomunicações , formado em Gestão de Tecnologia da Informação.  E no último ano, atuando como Analista de Sistemas.  
 
