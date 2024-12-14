@@ -4,7 +4,7 @@
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=1e929e&height=120&section=header"/>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MAURICIO+DE+MARSELHA;TENHO+29+ANOS!;+BEM-VINDO!+:%29)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MAURICIO+DE+MARSELHA;TENHO+29+ANOS!;+BEM-VINDO!+:%31)](https://git.io/typing-svg)
 
           Pai de 2 perfeições , Arthur e Antonio, sou natural da cidade de Conselheiro Lafaieite /MG.
 
@@ -35,8 +35,8 @@
 
 
 ### 🔗 Estudando no momento:
-![Dart](https://img.shields.io/badge/DART-2BB6F6?style=for-the-badge&logo=dart&logoColor=white)&nbsp;
-![Flutter Framework](https://img.shields.io/badge/FLUTTER-2BB6F6?style=for-the-badge&logo=flutter&logoColor=white)&nbsp;
+![JavaScript](https://img.shields.io/badge/JAVASCRIPT-2BB6F6?style=for-the-badge&logo=dart&logoColor=white)&nbsp;
+![Html Framework](https://img.shields.io/badge/FLUTR-2BB6F6?style=for-the-badge&logo=flutter&logoColor=white)&nbsp;
 
 
 
