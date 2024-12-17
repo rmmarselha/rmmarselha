@@ -6,7 +6,7 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MARSELHA;TENHO+31+ANOS!;+BEM-VINDO!)](https://git.io/typing-svg)
 
-          Wait...
+         Profissional certificado em ITIL® 4 Foundation, com formação em Gestão da Tecnologia e Informação e cursando especialização em Análise e Desenvolvimento de Sistemas. Possuo sólida experiência em gestão de equipes e liderança, bem como em atendimento ao cliente B2C e B2B. Tenho habilidades avançadas em análise e tester de ERP/CRM, com proficiência em Java e Python, e domínio na administração de bancos de dados MySQL. Experiência no desenvolvimento de scripts e relatórios utilizando SQL e iReport. Adicionalmente, aplico a metodologia KCS para replicação de conhecimento e possuo conhecimento na área de QA.
           
 
 
