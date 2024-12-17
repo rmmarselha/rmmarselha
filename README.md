@@ -35,8 +35,10 @@
 
 
 ### 🔗 Estudando no momento:
-![JavaScript](https://img.shields.io/badge/JAVASCRIPT-2BB6F6?style=for-the-badge&logo=dart&logoColor=white)&nbsp;
-![Html Framework](https://img.shields.io/badge/FLUTR-2BB6F6?style=for-the-badge&logo=flutter&logoColor=white)&nbsp;
+![JavaScript](https://img.shields.io/badge/JavaScript-123?style=for-the-badge&logo=javascript)
+![HTML5](https://img.shields.io/badge/HTML5-123?style=for-the-badge&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-123?style=for-the-badge&logo=css3&logoColor=264CE4)
+
 
 
 
