@@ -2,40 +2,64 @@ name: Update Age in README
 
 on:
   schedule:
-    # Roda à meia-noite do dia 1 de cada mês (ou coloque a data do seu aniversário)
-    - cron: '0 0 1 * *' 
-  workflow_dispatch: # Permite rodar manualmente para testar
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Calculate Age and Update README
         run: |
-          # Configure sua data de nascimento aqui (AAAA-MM-DD)
-          BIRTHDATE="1993-01-01" 
+          # 1. DEFINE A DATA DE NASCIMENTO (Ajuste aqui se necessário)
+          BIRTHDATE="1993-01-01"
+          
+          # 2. CALCULA A IDADE
           CURRENT_YEAR=$(date +%Y)
           BIRTH_YEAR=$(date -d "$BIRTHDATE" +%Y)
           AGE=$((CURRENT_YEAR - BIRTH_YEAR))
-          
-          # Ajuste se ainda não fez aniversário no ano corrente
           if [ $(date +%m%d) -lt $(date -d "$BIRTHDATE" +%m%d) ]; then
             AGE=$((AGE - 1))
           fi
+          echo "Idade calculada: $AGE"
 
-          # Cria a nova string do SVG
+          # 3. CRIA O NOVO LINK DO SVG
           NEW_SVG="[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MARSELHA;TENHO+${AGE}+ANOS!;+BEM-VINDO!)](https://git.io/typing-svg)"
-          
-          # Substitui o conteúdo entre as âncoras no README.md
-          sed -i "//,//c\\n${NEW_SVG}\n" README.md
 
+          # 4. ATUALIZA O README USANDO PYTHON (Mais seguro que o sed para evitar aquele erro)
+          python3 -c "
+          import os
+          readme_path = 'README.md'
+          with open(readme_path, 'r', encoding='utf-8') as f:
+              content = f.read()
+          
+          start_tag = ''
+          end_tag = ''
+          
+          if start_tag in content and end_tag in content:
+              import re
+              pattern = re.compile(f'{start_tag}.*?{end_tag}', re.DOTALL)
+              new_content = pattern.sub(f'{start_tag}\\n{os.environ[\"NEW_SVG\"]}\\n{end_tag}', content)
+              with open(readme_path, 'w', encoding='utf-8') as f:
+                  f.write(new_content)
+          else:
+              print('Âncoras não encontradas no README.md')
+              exit(1)
+          "
+        env:
+          NEW_SVG: ${{ env.NEW_SVG }} # Passa a variável para o Python com segurança
+          # Pequeno ajuste: vamos definir a variável NEW_SVG direto no shell antes do python
+          # Para garantir, vou ajustar o passo 3 acima para exportar a variável:
+        
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Bot: Idade atualizada com sucesso" || exit 0
+          git commit -m "Bot: Idade atualizada" || echo "Sem alterações"
           git push
