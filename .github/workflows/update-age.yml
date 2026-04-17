@@ -14,52 +14,38 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Calculate Age and Update README
+      - name: Update README with NodeJS
         run: |
-          # 1. DEFINE A DATA DE NASCIMENTO (Ajuste aqui se necessário)
-          BIRTHDATE="1993-01-01"
+          node -e "
+          const fs = require('fs');
+          const path = 'README.md';
+          let content = fs.readFileSync(path, 'utf8');
           
-          # 2. CALCULA A IDADE
-          CURRENT_YEAR=$(date +%Y)
-          BIRTH_YEAR=$(date -d "$BIRTHDATE" +%Y)
-          AGE=$((CURRENT_YEAR - BIRTH_YEAR))
-          if [ $(date +%m%d) -lt $(date -d "$BIRTHDATE" +%m%d) ]; then
-            AGE=$((AGE - 1))
-          fi
-          echo "Idade calculada: $AGE"
+          // Defina sua data de nascimento aqui
+          const birthDate = new Date('1993-01-01');
+          const today = new Date();
+          let age = today.getFullYear() - birthDate.getFullYear();
+          const m = today.getMonth() - birthDate.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+              age--;
+          }
 
-          # 3. CRIA O NOVO LINK DO SVG
-          NEW_SVG="[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MARSELHA;TENHO+${AGE}+ANOS!;+BEM-VINDO!)](https://git.io/typing-svg)"
-
-          # 4. ATUALIZA O README USANDO PYTHON (Mais seguro que o sed para evitar aquele erro)
-          python3 -c "
-          import os
-          readme_path = 'README.md'
-          with open(readme_path, 'r', encoding='utf-8') as f:
-              content = f.read()
+          const newSvg = '[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MARSELHA;TENHO+' + age + '+ANOS!;+BEM-VINDO!)](https://git.io/typing-svg)';
           
-          start_tag = ''
-          end_tag = ''
+          const startTag = '';
+          const endTag = '';
           
-          if start_tag in content and end_tag in content:
-              import re
-              pattern = re.compile(f'{start_tag}.*?{end_tag}', re.DOTALL)
-              new_content = pattern.sub(f'{start_tag}\\n{os.environ[\"NEW_SVG\"]}\\n{end_tag}', content)
-              with open(readme_path, 'w', encoding='utf-8') as f:
-                  f.write(new_content)
-          else:
-              print('Âncoras não encontradas no README.md')
-              exit(1)
+          // A lógica abaixo garante que TUDO entre as tags seja substituído por uma única linha
+          const regex = new RegExp(startTag + '[\\\\s\\\\S]*?' + endTag);
+          const newContent = content.replace(regex, startTag + '\\n' + newSvg + '\\n' + endTag);
+          
+          fs.writeFileSync(path, newContent);
           "
-        env:
-          NEW_SVG: ${{ env.NEW_SVG }} # Passa a variável para o Python com segurança
-          # Pequeno ajuste: vamos definir a variável NEW_SVG direto no shell antes do python
-          # Para garantir, vou ajustar o passo 3 acima para exportar a variável:
-        
+
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Bot: Idade atualizada" || echo "Sem alterações"
+          git commit -m "Bot: Idade sincronizada" || echo "Sem mudanças"
           git push
