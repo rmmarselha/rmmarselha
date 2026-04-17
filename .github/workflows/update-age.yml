@@ -1,0 +1,41 @@
+name: Update Age in README
+
+on:
+  schedule:
+    # Roda à meia-noite do dia 1 de cada mês (ou coloque a data do seu aniversário)
+    - cron: '0 0 1 * *' 
+  workflow_dispatch: # Permite rodar manualmente para testar
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Calculate Age and Update README
+        run: |
+          # Configure sua data de nascimento aqui (AAAA-MM-DD)
+          BIRTHDATE="1993-01-01" 
+          CURRENT_YEAR=$(date +%Y)
+          BIRTH_YEAR=$(date -d "$BIRTHDATE" +%Y)
+          AGE=$((CURRENT_YEAR - BIRTH_YEAR))
+          
+          # Ajuste se ainda não fez aniversário no ano corrente
+          if [ $(date +%m%d) -lt $(date -d "$BIRTHDATE" +%m%d) ]; then
+            AGE=$((AGE - 1))
+          fi
+
+          # Cria a nova string do SVG
+          NEW_SVG="[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MARSELHA;TENHO+${AGE}+ANOS!;+BEM-VINDO!)](https://git.io/typing-svg)"
+          
+          # Substitui o conteúdo entre as âncoras no README.md
+          sed -i "//,//c\\n${NEW_SVG}\n" README.md
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Bot: Idade atualizada com sucesso" || exit 0
+          git push
