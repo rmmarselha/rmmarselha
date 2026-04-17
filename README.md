@@ -1,4 +1,6 @@
 
+[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=1e929e&size=35&center=true&vCenter=true&width=1000&lines=OLÁ,+MEU+NOME+É+REINOR+MARSELHA;TENHO+33+ANOS!;+BEM-VINDO!)](https://git.io/typing-svg)
+
 
 
 
